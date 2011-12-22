@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  start: 2011-12-22 21:49:51
+  description: MyText
+  venue: 
+
+two:
+  title: MyString
+  start: 2011-12-22 21:49:51
+  description: MyText
+  venue: 
