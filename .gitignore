@@ -16,3 +16,6 @@
 
 # Ignore the OSX generated files
 .DS_Store*
+
+#Ignore the ruby swp files
+*.swp
