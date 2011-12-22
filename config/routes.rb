@@ -1,5 +1,7 @@
 Weekapp::Application.routes.draw do
-  resources :venues
+    resources :venues do
+        resources :coments
+    end
 
     root :to => "home#index"
 
