@@ -4,6 +4,7 @@ Weekapp::Application.routes.draw do
         collection do
             get 'all_events'
         end
+        resources :comments
     end
 
     root :to => "home#index"
