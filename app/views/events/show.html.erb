@@ -20,7 +20,9 @@
 </p>
 
 <h2>Comments</h2>
-<%= render @event.comments %>
+    <div id="comments">
+        <%= render @event.comments %>
+    </div>
 
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
