@@ -7,4 +7,8 @@
     <b>Comment:</b>
     <%= comment.body %>
 </p>
+<p>
+    <b>Posted:</b>
+    <%= distance_of_time_in_words_to_now(comment.created_at)%> ago
+</p>
 

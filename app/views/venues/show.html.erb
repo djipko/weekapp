@@ -10,6 +10,7 @@
   <%= @venue.address %>
 </p>
 
+<%= render "events/past_and_future_list" %>
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>

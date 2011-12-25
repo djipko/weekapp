@@ -14,6 +14,8 @@ class VenuesController < ApplicationController
   # GET /venues/1.json
   def show
     @venue = Venue.find(params[:id])
+    @past_events = Event.where('venue_id = ? AND start < ?', @venue.id, Time.now)
+    @future_events = Event.where('venue_id = ? AND start >= ?', @venue.id, Time.now)
 
     respond_to do |format|
       format.html # show.html.erb

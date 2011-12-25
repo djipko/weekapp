@@ -1,0 +1,18 @@
+<p><b>Future events here</b></p>
+<% @future_events.each do |event| %>
+    <table>
+      <tr>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.start.strftime('%a %d %B, %Y at %H:%M') %></td>
+      </tr>
+    </table>
+<% end %>
+<p><b>Past events here</b></p>
+<% @past_events.each do |event| %>
+    <table>
+      <tr>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.start.strftime('%a %d %B, %Y at %H:%M') %></td>
+      </tr>
+    </table>
+<% end %>
