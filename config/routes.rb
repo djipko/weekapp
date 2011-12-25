@@ -1,6 +1,10 @@
 Weekapp::Application.routes.draw do
     resources :venues
-    resources :events
+    resources :events do
+        collection do
+            get 'all_events'
+        end
+    end
 
     root :to => "home#index"
 
