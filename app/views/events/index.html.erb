@@ -5,6 +5,7 @@
     <th>Title</th>
     <th>At</th>
     <th>Starts</th>
+    <th>Created</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +15,8 @@
   <tr>
     <td><%= event.title %></td>
     <td><%= event.venue.name %></td>
-    <td><%= event.start %></td>
+    <td><%= event.start.strftime('%a %d %B, %Y at %H:%M') %></td>
+    <td><%= distance_of_time_in_words_to_now(event.created_at)%> ago</td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
