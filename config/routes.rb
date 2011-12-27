@@ -1,4 +1,6 @@
 Weekapp::Application.routes.draw do
+    devise_for :users
+
     resources :venues
     resources :events do
         collection do
