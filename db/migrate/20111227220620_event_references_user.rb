@@ -6,7 +6,7 @@ class EventReferencesUser < ActiveRecord::Migration
   end
 
   def down
-      change_table :comments do |t|
+      change_table :events do |t|
         t.remove :user_id
       end
   end

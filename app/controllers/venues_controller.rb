@@ -77,11 +77,17 @@ class VenuesController < ApplicationController
   # DELETE /venues/1.json
   def destroy
     @venue = Venue.find(params[:id])
-    @venue.destroy
 
     respond_to do |format|
-      format.html { redirect_to venues_url }
-      format.json { head :ok }
+        if @venue.user == current_user
+            @venue.destroy
+
+            format.html { redirect_to venues_url }
+            format.json { head :ok }
+        else
+            format.html { redirect_to venues_path, :notice => 'Cannot delete venue you did not create' }
+        end
     end
+
   end
 end
