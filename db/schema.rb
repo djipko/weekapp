@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227214412) do
+ActiveRecord::Schema.define(:version => 20111227220620) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20111227214412) do
     t.integer  "venue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "events", ["venue_id"], :name => "index_events_on_venue_id"

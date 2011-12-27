@@ -19,6 +19,12 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <b>Published by:</b>
+  <%= @event.user.email %>
+</p>
+
+
 <h2>Comments</h2>
 <div id="comments">
     <%= render @event.comments %>

@@ -54,6 +54,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save
@@ -86,11 +87,16 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
-      format.json { head :ok }
+        if @event.user == current_user
+            @event.destroy
+
+            format.html { redirect_to events_url }
+            format.json { head :ok }
+        else
+            format.html { redirect_to events_path, :notice => 'Cannot delete event you did not create' }
+        end
     end
   end
 end
